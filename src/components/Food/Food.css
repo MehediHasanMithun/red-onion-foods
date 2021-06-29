@@ -1,0 +1,14 @@
+.food-item img{
+    width: 200px;
+}
+.food-item{
+    border: none;
+    margin: 20px 50px;
+    text-align: center;
+    padding: 5px;   
+    border-radius: 15px;
+    cursor: pointer;
+}
+.food-item:hover{
+    box-shadow: 0 4px 8px 0 lightgray; 
+}

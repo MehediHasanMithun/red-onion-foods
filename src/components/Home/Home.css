@@ -1,0 +1,28 @@
+.banner-bg {
+    background-image: url('../../Images/bannerbackground.png');
+    background-size: 1480px;
+    background-repeat: no-repeat;
+    background-position-y: 100px;
+    background-position-x:-70px;
+}
+.banner-text{
+    margin-top: 150px;
+    margin-left: 400px;
+    margin-right: 100px;
+}
+.search-box{
+    width: 350px;
+    margin-left: 50px;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+}
+.search-btn{
+    padding: 8px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(224, 18, 18, 0.767);
+    color: white;
+}

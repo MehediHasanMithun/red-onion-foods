@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Breakfast from '../Breakfast/Breakfast';
 import Dinner from '../Dinner/Dinner';
 import Lunch from '../Lunch/Lunch';
 import Nav from '../NavBar/Nav';
 import './Home.css';
 const Home = () => {
+   const [clicked,setClicked] = useState("lunch");
+
     const handleSubmit = (e)=>{
         e.preventDefault();
     }
+    const handleBreakfast=()=>{
+        //console.log("breakfast");
+        setClicked("breakfast");
+    
+    }
+    const handleLunch=()=>{
+        //console.log("lunch");
+        setClicked("lunch");
+    }
+    const handleDinner=()=>{
+       // console.log("dinner");
+        setClicked("dinner");
+    
+    }
+    
+    
     return (
         <div className="banner-bg">
             <Nav></Nav>
@@ -19,11 +37,15 @@ const Home = () => {
                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                </form>
             </div>
-              
-                <Breakfast></Breakfast>
-                 <Lunch></Lunch>
-                 <Dinner></Dinner>
-            
+              <div className="d-flex justify-content-center">
+                  <button onClick={handleBreakfast} style={{color:"black"}} className="category-btn">Breakfast</button>
+                  <button onClick={handleLunch}  className="category-btn">Lunch</button>
+                  <button onClick={handleDinner} className="category-btn">Dinner</button>
+              </div>
+    
+                {clicked==='breakfast' && <Breakfast></Breakfast>}
+                {clicked==='lunch' && <Lunch></Lunch>}
+                {clicked==='dinner' && <Dinner></Dinner>}
         </div>
     );
 };

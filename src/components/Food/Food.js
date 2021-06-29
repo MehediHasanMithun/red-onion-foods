@@ -1,7 +1,7 @@
 import React from 'react';
 import './Food.css';
 const Food = (props) => {
-    console.log(props);
+    //console.log(props);
     const {food} = props;
     return (
         <div className="food-item">

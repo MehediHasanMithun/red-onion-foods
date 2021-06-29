@@ -26,3 +26,17 @@
     background-color: rgba(224, 18, 18, 0.767);
     color: white;
 }
+.category-btn{
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color:white;
+    border: none;
+    border-radius: 10px;
+    color:black;
+    padding: 5px;
+    margin-bottom: 35px;
+    font-weight: 500;
+}
+.btn-group{
+    text-align: center;
+}

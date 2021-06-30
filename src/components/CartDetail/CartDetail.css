@@ -1,0 +1,28 @@
+.cart-img{
+    width:100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cart-detail{
+        border:1px solid gray;
+        margin: 30px;
+        padding: 5px 5px 5px 5px;
+        display: flex;
+        box-sizing: border-box;
+        width: 45%;
+        border-radius: 30px;
+        text-align: center;
+
+}
+.name-detail{
+   margin-top: 40px;
+    
+}
+.counter-detail{
+  margin-top: 40px;
+}
+.remove{
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}

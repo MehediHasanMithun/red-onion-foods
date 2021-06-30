@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FR0M_CART } from '../Actions/CartAction';
+import { ADD_TO_CART, REMOVE_FR0M_CART, UPDATE_CART } from '../Actions/CartAction';
 const initialState = {
     cart: []
 }
@@ -15,8 +15,16 @@ const cartReducer = (state = initialState, action) => {
             }
         case REMOVE_FR0M_CART:
             const newCart = state.cart.filter(item => item.cartId !== action.payload.cartId);
+            console.log(newCart);
             return {
                 cart: newCart
+            }
+        case UPDATE_CART:
+            const updatedItem = state.cart.map(item=>item.cartId===action.payload.cartId);
+             updatedItem.quantity = action.payload.quantity;
+            
+            return{
+                cart:[...state.cart,updatedItem]
             }
         default:
             return state;

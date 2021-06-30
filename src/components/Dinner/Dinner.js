@@ -3,13 +3,13 @@ import { foods } from '../../Data/Data';
 import Food from '../Food/Food';
 const Dinner = () => {
     const dinner = foods.filter(fd => fd.category === 'Dinner');
-    console.log(dinner);
+    //console.log(dinner);
     return (
-        <div class="container">
-        <div class="row">
+        <div className="container">
+        <div className="row">
             {
                 dinner.map(fd =>
-                    <div class="col-4">
+                    <div className="col-4">
                         <Food key={fd.img} food={fd}></Food>
                     </div>
                 )

@@ -1,4 +1,5 @@
 export const foods =[{
+   id:"l1",
    name:"Healthy Meal Plan",
    category:"Lunch",
    price: 23.99,
@@ -7,6 +8,7 @@ export const foods =[{
    shortDescription:"It has all kinds of gradients which essential for human body"
 },
 {
+   id:"l2",
     name:"Fried Chicken Bento",
     category:"Lunch",
     price: 9.99,
@@ -15,6 +17,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"l3",
     name:"Tarragon-Rubbed-Salmon",
     category:"Lunch",
     price: 6.99,
@@ -23,6 +26,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"l4",
     name:"Indian Lunch",
     category:"Lunch",
     price: 8.99,
@@ -31,6 +35,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"l5",
     name:"Beef Steak",
     category:"Lunch",
     price: 15.99,
@@ -39,6 +44,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"l6",
     name:"Honey-Soy-Glazed Salmon with Peppers",
     category:"Lunch",
     price: 7.99,
@@ -47,6 +53,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b1",
     name:"Bagel and cream cheese",
     category:"Breakfast",
     price: 6.99,
@@ -55,6 +62,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b2",
     name:"Breakfast sandwich",
     category:"Breakfast",
     price: 9.99,
@@ -63,6 +71,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b3",
     name:"Baked Chicken",
     category:"Breakfast",
     price: 10.99,
@@ -71,6 +80,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b4",
     name:"Eggs Benedict",
     category:"Breakfast",
     price: 8.99,
@@ -79,6 +89,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b5",
     name:"Toast Croissant Fried egg",
     category:"Breakfast",
     price: 19.99,
@@ -87,6 +98,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"b6",
     name:"Full Breakfast Fried Egg Toast Brunch",
     category:"Breakfast",
     price: 3.99,
@@ -95,6 +107,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d1",
     name:"Salmon with Grapefruit and Lentil Salad",
     category:"Dinner",
     price: 9.99,
@@ -103,6 +116,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d2",
     name:"Lemony Salmon Piccata",
     category:"Dinner",
     price: 10.99,
@@ -111,6 +125,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d3",
     name:"Park Tenderloin with Quinoa Pilaf",
     category:"Dinner",
     price: 12.99,
@@ -119,6 +134,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d4",
     name:"French fries with cheese",
     category:"Dinner",
     price: 8.99,
@@ -127,6 +143,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d5",
     name:"Garlic Butter Baked Salmon",
     category:"Dinner",
     price: 6.99,
@@ -135,6 +152,7 @@ export const foods =[{
     shortDescription:"It has all kinds of gradients which essential for human body"
  },
  {
+   id:"d6",
     name:"Baked Chicken",
     category:"Dinner",
     price: 9.99,

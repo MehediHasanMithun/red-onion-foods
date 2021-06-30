@@ -1,14 +1,18 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { createContext, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
 
-function App() {
-  return (
-    <Router>
+export const foodDetailContext = createContext();
 
+function App() {
+  const [foodDetail,setFoodDetail] = useState({});
+  return (
+    <foodDetailContext.Provider value={[foodDetail,setFoodDetail]}>
+    <Router>
       <Switch>
         <Route path="/cart">
           <Cart></Cart>
@@ -25,6 +29,7 @@ function App() {
       </Switch>
 
     </Router>
+    </foodDetailContext.Provider>
   );
 }
 

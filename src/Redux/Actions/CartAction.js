@@ -7,16 +7,17 @@ export const addToCart = (product,quantity) => {
         payload: { product, quantity }
     }
 }
-export const removeFromCart = (CartId) => {
+export const removeFromCart = cartId => {
+    //console.log(cartId, "from action");
     return {
         type: REMOVE_FR0M_CART,
-        payload: { CartId }
+        payload:{ cartId }
     }
 }
 
-export const updateCart = (CartId,quantity)=>{
+export const updateCart = (cartId,quantity)=>{
     return{
         type:UPDATE_CART,
-        payload:{ CartId , quantity}
+        payload:{ cartId , quantity}
     }
 }

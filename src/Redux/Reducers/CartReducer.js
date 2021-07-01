@@ -14,18 +14,19 @@ const cartReducer = (state = initialState, action) => {
                 cart: [...state.cart, newItem]
             }
         case REMOVE_FR0M_CART:
+            //console.log(action.payload.cartId,"from reducer");
             const newCart = state.cart.filter(item => item.cartId !== action.payload.cartId);
-            console.log(newCart);
+            //console.log(newCart,action.cartId);
             return {
                 cart: newCart
             }
+
         case UPDATE_CART:
-            const updatedItem = state.cart.map(item=>item.cartId===action.payload.cartId);
-             updatedItem.quantity = action.payload.quantity;
-            
-            return{
-                cart:[...state.cart,updatedItem]
-            }
+            const updatedItem = state.cart.filter(item=>item.cartId===action.payload.cartId);
+            const updatedItemObj = updatedItem[0];
+            updatedItemObj.quantity = action.payload.quantity;
+            return state;
+
         default:
             return state;
     }

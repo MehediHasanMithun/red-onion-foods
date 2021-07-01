@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
+import Breakfast from './components/Breakfast/Breakfast';
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';

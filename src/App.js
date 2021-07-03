@@ -1,9 +1,12 @@
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
-import Cart from './components/Cart/Cart';
+import CheckOut from './components/CheckOut/CheckOut';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import NewCart from './components/NewCart/NewCart';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Profile from './components/ProfileManager/Profile';
 import ProfileAccount from './components/ProfileManager/ProfileAccount';
 import SignUp from './components/SignUp/SignUp';
@@ -26,7 +29,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/cart">
-          <Cart></Cart>
+         <NewCart></NewCart>
         </Route>
         <Route path="/login">
           <Login></Login>
@@ -37,6 +40,12 @@ function App() {
         <Route path="/myaccount">
           <ProfileAccount></ProfileAccount>
         </Route>
+        <Route path="/placeorder">
+          <PlaceOrder></PlaceOrder>
+        </Route>
+        <PrivateRoute path="/checkout">
+        <CheckOut></CheckOut>
+        </PrivateRoute>
         <Route path="/signup">
           <SignUp></SignUp>
         </Route>

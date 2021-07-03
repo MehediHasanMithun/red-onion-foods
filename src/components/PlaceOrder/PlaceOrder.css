@@ -1,0 +1,35 @@
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-flex;
+  }
+  .bike{
+      width:100px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+  }
+  .raider-block{
+      display: flex;
+  }
+  .map{
+      width: 600px;
+      margin-right: 200px;
+      margin-top: 30px;
+  }
+  .delivery-details{
+      margin-top: 35px;
+      border: none;
+      padding: 15px;
+      background-color: whitesmoke;
+  }
+  .location{
+      background-color: white;
+      padding: 5px;
+  }
+  .contact-btn{
+      width:230px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }

@@ -16,7 +16,7 @@ const Nav = (props) => {
     return (
         <div className="Nav">
               <div>
-                 <img src={logo} alt="Logo" />
+                <Link to="/"> <img src={logo} alt="Logo" /></Link>
               </div> 
                 <Link to="/cart" className="cart-icon">
                   <FiShoppingCart style={{fontSize:'25px'}}></FiShoppingCart><span className="product-count">{cart.length}</span>

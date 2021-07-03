@@ -8,12 +8,13 @@ import { AiOutlineMinus } from "react-icons/ai";
 import { foodDetailContext } from '../../App';
 import FoodDetail from '../FoodDetail/FoodDetail';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
 
     const { cart } = props;
-    const [disable, setDisable] = useState("disabled");
-    const [foodDetail, setFoodDetail] = useContext(foodDetailContext);
+    const [disable] = useState("disabled");
+    const [foodDetail] = useContext(foodDetailContext);
     const [clicked, setClicked] = useState("lunch");
 
     // console.log(foodDetail,"foodDetail");
@@ -66,9 +67,9 @@ const Home = (props) => {
             {clicked === '' && <FoodDetail food={foodDetail}></FoodDetail>}
 
             <div style={{ textAlign: "center" }}>
-                <button disabled={cart.length > 0 ? "" : disable} style={{ marginBottom: "30px", backgroundColor: cart.length > 0 ? "rgba(224, 18, 18, 0.767)" : "gray" }} className="search-btn">Checkout Your Food</button>
+                <Link to="/checkout"  style={{pointerEvents: cart.length>0 ? "" :"none", marginBottom: "30px",textDecoration:"none", backgroundColor: cart.length > 0 ? "rgba(224, 18, 18, 0.767)" : "gray" }} className="search-btn">Checkout Your Food</Link>
             </div>
-
+            <br /><br /><br /><br />
         </div>
     );
 };

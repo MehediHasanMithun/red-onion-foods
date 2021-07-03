@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import logo from '../../Images/logo2.png';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { signInWithEmail } from '../../Firebase/SIgnInManager/SignInWithEmailManager';
 import { FcGoogle } from "react-icons/fc";
@@ -13,6 +13,9 @@ import { userInfoContext } from '../../App';
 
 const Login = () => {
     let history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+    //console.log("from",from);
     const [userInfo,setUserInfo] = useContext(userInfoContext);
    const [user,setUser] = useState({email:"",password:""});
   
@@ -27,7 +30,8 @@ const Login = () => {
        newUserInfo.errorMessage = res.errorMessage;
        setUserInfo(newUserInfo);
        if(newUserInfo.isSignIn)
-       history.push("/");
+       history.replace(from);
+      // history.push("/");
     });
      e.preventDefault();
    }
@@ -50,7 +54,8 @@ const Login = () => {
         newUserInfo.errorMessage = res.errorMessage;
         setUserInfo(newUserInfo);
         if(newUserInfo.isSignIn)
-         history.push("/");
+        history.replace(from);
+         //history.push("/");
     });
    }
 
@@ -65,7 +70,8 @@ const Login = () => {
         newUserInfo.errorMessage = res.errorMessage;
         setUserInfo(newUserInfo);
         if(newUserInfo.isSignIn)
-        history.push("/");
+        history.replace(from);
+       // history.push("/");
        });
    }
 

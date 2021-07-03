@@ -5,13 +5,14 @@
 }
 .cart-detail{
         border:1px solid gray;
-        margin: 30px;
+        margin: 20px;
         padding: 5px 5px 5px 5px;
         display: flex;
         box-sizing: border-box;
-        width: 45%;
-        border-radius: 30px;
+        width: 70%;
+        border-radius: 20px;
         text-align: center;
+        background-color: whitesmoke;
 
 }
 .name-detail{

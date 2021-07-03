@@ -1,22 +1,38 @@
 import React from 'react';
 import './Login.css';
 import logo from '../../Images/logo2.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { signInWithEmail } from '../../Firebase/SIgnInManager/SignInWithEmailManager';
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import { signInWithGoogle } from '../../Firebase/SIgnInManager/SignInWithGoogleManager';
 import { signInWithFacebook } from '../../Firebase/SIgnInManager/SignInWithFacebookManager';
+import { useContext } from 'react';
+import { userInfoContext } from '../../App';
 
 const Login = () => {
+    let history = useHistory();
+    const [userInfo,setUserInfo] = useContext(userInfoContext);
    const [user,setUser] = useState({email:"",password:""});
-
+  
    const handleEmailPasswordSubmit = (e)=>{
     signInWithEmail(user.email,user.password)
-    .then(res=>console.log(res));
+    .then(res=>{
+       const newUserInfo ={...userInfo};
+       newUserInfo.email = res.email;
+       newUserInfo.name = res.name;
+       newUserInfo.emailVerified = res.emailVerified;
+       newUserInfo.isSignIn = res.isSignIn;
+       newUserInfo.errorMessage = res.errorMessage;
+       setUserInfo(newUserInfo);
+       if(newUserInfo.isSignIn)
+       history.push("/");
+    });
      e.preventDefault();
    }
+
+
    const handleInputField = (e) =>{
        const newUser = {...user};
        newUser[e.target.name] = e.target.value;
@@ -25,12 +41,32 @@ const Login = () => {
 
    const handleGoogleSignIn =()=>{
     signInWithGoogle()
-    .then(res=>console.log(res));
+    .then(res=>{
+        const newUserInfo ={...userInfo};
+        newUserInfo.email = res.email;
+        newUserInfo.name = res.name;
+        newUserInfo.emailVerified = res.emailVerified;
+        newUserInfo.isSignIn = res.isSignIn;
+        newUserInfo.errorMessage = res.errorMessage;
+        setUserInfo(newUserInfo);
+        if(newUserInfo.isSignIn)
+         history.push("/");
+    });
    }
 
    const handleFacebookLogin =()=>{
        signInWithFacebook()
-       .then(res=>console.log(res));
+       .then(res=>{
+        const newUserInfo ={...userInfo};
+        newUserInfo.email = res.email;
+        newUserInfo.name = res.name;
+        newUserInfo.emailVerified = res.emailVerified;
+        newUserInfo.isSignIn = res.isSignIn;
+        newUserInfo.errorMessage = res.errorMessage;
+        setUserInfo(newUserInfo);
+        if(newUserInfo.isSignIn)
+        history.push("/");
+       });
    }
 
     return (
@@ -56,7 +92,11 @@ const Login = () => {
                 <p>Don't have an Account?
                     <Link to="/signup" className="btn btn-outline-danger" style={{ border: "none", fontWeight: "600",textDecoration:"none",marginLeft:"5px" }}>Sign Up</Link>
                 </p>
-                <br /><br /><br /><br /><br /><br /><br /><br />
+                <br />
+                {
+                    userInfo.isSignIn ? <p style={{color:"green"}}>Mr. {userInfo.name} Sign In successfully</p> : <p style={{color:"red"}}>{userInfo.errorMessage}</p>
+                }
+                <br /><br /><br /><br /><br /><br />
             </div>
         </div>
     );

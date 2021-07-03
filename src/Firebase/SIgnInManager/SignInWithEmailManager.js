@@ -3,17 +3,26 @@ import "firebase/auth";
 
 
 export const signInWithEmail = (email,password)=>{
-
+ const newUser ={name:"",email:"",emailVerified:false,isSignIn:false,errorMessage:""};
  return firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
-    var user = userCredential.user;
-    // ...
-    return user;
+    const user = userCredential.user;
+    console.log(user);
+    newUser.name = user.displayName;
+    newUser.email = user.email;
+    newUser.emailVerified = user.emailVerified;
+    newUser.isSignIn = true;
+    newUser.errorMessage = "";
+    return newUser;
   })
   .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    return errorMessage;
+    const errorMessage = error.message;
+    newUser.name = "";
+    newUser.email = email;
+    newUser.emailVerified = false;
+    newUser.isSignIn = false;
+    newUser.errorMessage = errorMessage;
+    return newUser;
   });
 }
